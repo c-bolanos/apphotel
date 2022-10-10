@@ -8,13 +8,23 @@ use Illuminate\Support\Facades\Redirect;
 
 class HabitacionController extends Controller
 {
+
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
+
     {
+        
+
         $habitacion=Habitacion::orderBy('id_habitacion','DESC')->paginate(3);
         return view('habitacion.index',compact('habitacion'));
     }

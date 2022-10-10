@@ -20,5 +20,14 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+// La creación de datos de roles debe ejecutarse primero
+$this->call(RoleTableSeeder::class);    
+
+// Los usuarios necesitarán los roles previamente generados
+$this->call(UserTableSeeder::class);
+
+
+
     }
 }
