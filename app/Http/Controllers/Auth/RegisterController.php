@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Validator;
 
 use App\Models\Role;
 
+use Image;
+
 class RegisterController extends Controller
 {
     /*
@@ -72,10 +74,19 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);*/
 
+        $avatar = $data['avatar'];
+
+       // $filename = time() . '.' . $avatar->getClientOriginalExtension();
+
+        $filename = $data['name'].'.' . $avatar->getClientOriginalExtension();
+        
+        Image::make($avatar)->resize(300, 300)->save( public_path('/uploads/avatars/' . $filename) );
+       
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'avatar' => $filename,
         ]);    
         
         $user

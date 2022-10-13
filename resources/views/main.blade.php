@@ -145,7 +145,7 @@
                                             <li><a href="#">Premium</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="./blog.html">Novedades</a></li>
+                                    <li><a href="{{route('login')}}">Login</a></li>
                                     <li><a href="./contact.html">Contacto</a></li>
                                 </ul>
                             </nav>

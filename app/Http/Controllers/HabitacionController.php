@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Habitacion;
 use Illuminate\Support\Facades\Redirect;
+use App\Http\Requests\HabitacionFormRequest;
 
 class HabitacionController extends Controller
 {
@@ -45,7 +46,7 @@ class HabitacionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(HabitacionFormRequest $request)
     {
         $habitaciones=new Habitacion;
         $habitaciones->nombre_habitacion=$request->get('nombre_habitacion'); 

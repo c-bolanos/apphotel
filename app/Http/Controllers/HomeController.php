@@ -25,7 +25,7 @@ class HomeController extends Controller
     {
 
 
-        $request->user()->authorizeRoles('user');
+        //$request->user()->authorizeRoles('admin');
         $habitacion=Habitacion::orderBy('id_habitacion','DESC')->paginate(3);
         return view('habitacion.index',compact('habitacion'));
        

@@ -13,7 +13,7 @@ class HabitacionFormRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +23,30 @@ class HabitacionFormRequest extends FormRequest
      */
     public function rules()
     {
+       
         return [
-            //
+          
+            'nombre_habitacion' => 'required',
+            'piso_habitacion' => 'required',            
+
         ];
     }
+
+
+    public function messages()
+ {
+    
+    return [
+        'nombre_habitacion.required' => 'El nombre de habitacion no puede estar vacio',
+        'piso_habitacion.required' => 'El piso habitacion no puede estar vacio',
+         //'email.email' => 'El correo debe tener un formato correcto',
+    ];
+}    
+
+
+
+
+
+
+
 }

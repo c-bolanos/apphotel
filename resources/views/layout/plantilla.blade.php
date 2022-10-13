@@ -189,7 +189,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->email }}
+                                    {{ Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -228,15 +228,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">        
                     <div class="info">
                         
-                        <a href="#" class="d-block"><i class="fa-solid fa-users-viewfinder"> </i> Administrador </a>
+                        <a href="#" class="d-block"><i class="fa-solid fa-users-viewfinder"> </i> ROl - {{ Auth::user()->roles()->first()->name }} </a>
                     </div>
                 </div>
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="{{ asset('https://cdn.euroinnova.edu.es/img/subidasEditor/funciones-de-un-administrador-de-empresa-1-1596991296.jpg')}}" class="img-circle elevation-2" alt="User Image">
+                        <img src="{{ asset('uploads/avatars')}}/{{ Auth::user()->avatar }}" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">David Bedoya</a>
+                        <a href="#" class="d-block"> {{ Auth::user()->name }}</a>
                     </div>
                 </div>
 
